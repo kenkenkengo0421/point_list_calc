@@ -1,12 +1,11 @@
 //入力変数
-let in_point_yen :number = 0;
 let in_Cpu :number = 0;
 let in_Unitpoints :number = 16;
 let in_Boxname :string = "";
 let in_DOII :number = 0;
 let in_DOIS :number = 0;
 let in_DII :number = 0;
-let in_DIS :number = 0;
+let in_DIS :number = 16;
 let in_DIA :number = 0;
 let in_DO :number = 0;
 let in_SI :number = 0;
@@ -60,21 +59,67 @@ out_kv_da40v = Math.ceil(in_AO / 4);
 let Point_list = "";
 
 if (in_Unitpoints == 16) {
-  Point_list = 
-`
-盤名称:${in_Boxname}
-DO(cx):${out_DOCX}
-DO(tx):${out_DOTX}
-DIS:${out_DIS}
-DIA:${out_DIA}
-SI:${in_SI}
-AI:${in_AI}
-RI:${in_RI}
-AO:${in_AO}
-
-`;
-  
+  Point_list =
+    `
+    盤名称:${in_Boxname}
+    DO(cx):${out_DOCX}
+    DO(tx):${out_DOTX}
+    DIS:${out_DIS}
+    DIA:${out_DIA}
+    SI:${in_SI}
+    AI:${in_AI}
+    RI:${in_RI}
+    AO:${in_AO}
+    合計:${out_Total}
+    KV8000(CPU):${out_kv8000}
+    KV-B16X(入力):${out_kv_b16x}
+    KV-B16T(出力):${out_kv_b16t}
+    KV-TP40(アナログ入力):${out_kv_tp40}
+    KV-DA40V(アナログ出力):${out_kv_da40v}
+    `;
+} else if(in_Unitpoints == 32) {
+  Point_list =
+    `
+    盤名称:${in_Boxname}
+    DO(cx):${out_DOCX}
+    DO(tx):${out_DOTX}
+    DIS:${out_DIS}
+    DIA:${out_DIA}
+    SI:${in_SI}
+    AI:${in_AI}
+    RI:${in_RI}
+    AO:${in_AO}
+    合計:${out_Total}
+    KV8000(CPU):${out_kv8000}
+    KV-C32X(入力):${out_kv_c32x}
+    KV-C32T(出力):${out_kv_c32t}
+    KV-TP40(アナログ入力):${out_kv_tp40}
+    KV-DA40V(アナログ出力):${out_kv_da40v}
+    `;
+}else if(in_Unitpoints == 64) {
+  Point_list =
+    `
+    盤名称:${in_Boxname}
+    DO(cx):${out_DOCX}
+    DO(tx):${out_DOTX}
+    DIS:${out_DIS}
+    DIA:${out_DIA}
+    SI:${in_SI}
+    AI:${in_AI}
+    RI:${in_RI}
+    AO:${in_AO}
+    合計:${out_Total}
+    KV8000(CPU):${out_kv8000}
+    KV-C64X(入力):${out_kv_c64x}
+    KV-C64T(出力):${out_kv_c64t}
+    KV-TP40(アナログ入力):${out_kv_tp40}
+    KV-DA40V(アナログ出力):${out_kv_da40v}
+    `;
 }
+
+
+
+
 
 console.log(Point_list);
 
