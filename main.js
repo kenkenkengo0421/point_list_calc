@@ -6,9 +6,10 @@ let in_Boxname = "";
 let in_DOII = 0;
 let in_DOIS = 0;
 let in_DII = 0;
-let in_DIS = 16;
+let in_DIS = 0;
 let in_DIA = 0;
 let in_DO = 0;
+let in_DO_Make = 0;
 let in_SI = 0;
 let in_AI = 0;
 let in_RI = 0;
@@ -33,21 +34,22 @@ out_DOCX = in_DOII + in_DOIS + in_DO;
 out_DOTX = in_DOII + in_DOIS + in_DO;
 out_DIS = in_DOII + in_DOIS + in_DII + in_DIS;
 out_DIA = in_DOII + in_DII + in_DIA;
+//in_DO_Make
+//in_DO
 //in_SI
 //in_RI
 //in_AI
 //in_AO
-//in_Comment
-out_Total = out_DOCX + out_DOTX + out_DIS + out_DIA + in_SI + in_RI + in_AI + in_AO;
+out_Total = out_DOCX + out_DOTX + in_DO_Make + out_DIS + out_DIA + in_SI + in_RI + in_AI + in_AO;
 out_kv8000 = in_Cpu;
 //di
 out_kv_b16x = Math.ceil((out_DIS + out_DIA + in_SI) / 16);
 out_kv_c32x = Math.ceil((out_DIS + out_DIA + in_SI) / 32);
 out_kv_c64x = Math.ceil((out_DIS + out_DIA + in_SI) / 64);
 //do
-out_kv_b16t = Math.ceil((out_DOCX + out_DOTX) / 16);
-out_kv_c32t = Math.ceil((out_DOCX + out_DOTX) / 32);
-out_kv_c64t = Math.ceil((out_DOCX + out_DOTX) / 64);
+out_kv_b16t = Math.ceil((out_DOCX + out_DOTX + in_DO_Make) / 16);
+out_kv_c32t = Math.ceil((out_DOCX + out_DOTX + in_DO_Make) / 32);
+out_kv_c64t = Math.ceil((out_DOCX + out_DOTX + in_DO_Make) / 64);
 //ai
 out_kv_tp40 = Math.ceil((in_AI + in_RI) / 4);
 //ao
@@ -59,6 +61,7 @@ if (in_Unitpoints == 16) {
     盤名称:${in_Boxname}
     DO(cx):${out_DOCX}
     DO(tx):${out_DOTX}
+    DO(連続):${in_DO_Make}
     DIS:${out_DIS}
     DIA:${out_DIA}
     SI:${in_SI}
@@ -79,6 +82,7 @@ else if (in_Unitpoints == 32) {
     盤名称:${in_Boxname}
     DO(cx):${out_DOCX}
     DO(tx):${out_DOTX}
+    DO(連続):${in_DO_Make}
     DIS:${out_DIS}
     DIA:${out_DIA}
     SI:${in_SI}
@@ -99,6 +103,7 @@ else if (in_Unitpoints == 64) {
     盤名称:${in_Boxname}
     DO(cx):${out_DOCX}
     DO(tx):${out_DOTX}
+    DO(連続):${in_DO_Make}
     DIS:${out_DIS}
     DIA:${out_DIA}
     SI:${in_SI}
