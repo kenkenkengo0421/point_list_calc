@@ -1,20 +1,20 @@
 var btn = document.getElementById("btn") as HTMLElement;
 btn.onclick = function() {
 //入力変数
-  let in_Cpu :number = parseFloat((document.getElementById("in_cpu") as HTMLInputElement).value);
-  let in_Unitpoints :number = 16;
-  let in_Boxname :string = "";
-  let in_DOII :number = 0;
-  let in_DOIS :number = 0;
-  let in_DII :number = 0;
-  let in_DIS :number = 0;
-  let in_DIA :number = 0;
-  let in_DO :number = 0;
-  let in_DO_Make :number = 0;
-  let in_SI :number = 0;
-  let in_AI :number = 0;
-  let in_RI :number = 0;
-  let in_AO :number = 0;
+  let in_Cpu :number = parseFloat((document.getElementById("in_Cpu") as HTMLInputElement).value);
+  let in_Unitpoints :number = parseFloat((document.getElementById("in_Unitpoints") as HTMLInputElement).value);
+  let in_Boxname :string = (document.getElementById("in_Boxname") as HTMLInputElement).value;
+  let in_DOII :number = parseFloat((document.getElementById("in_DOII") as HTMLInputElement).value);
+  let in_DOIS :number = parseFloat((document.getElementById("in_DOIS") as HTMLInputElement).value);
+  let in_DII :number =parseFloat((document.getElementById("in_DII") as HTMLInputElement).value);
+  let in_DIS :number = parseFloat((document.getElementById("in_DIS") as HTMLInputElement).value);
+  let in_DIA :number = parseFloat((document.getElementById("in_DIA") as HTMLInputElement).value);
+  let in_DO :number = parseFloat((document.getElementById("in_DO") as HTMLInputElement).value);
+  let in_DO_Make :number = parseFloat((document.getElementById("in_DO_Make") as HTMLInputElement).value);
+  let in_SI :number = parseFloat((document.getElementById("in_SI") as HTMLInputElement).value);
+  let in_AI :number = parseFloat((document.getElementById("in_AI") as HTMLInputElement).value);
+  let in_RI :number = parseFloat((document.getElementById("in_RI") as HTMLInputElement).value);
+  let in_AO :number = parseFloat((document.getElementById("in_AO") as HTMLInputElement).value);
 
 //出力変数１
   let out_DOCX :number = 0;
@@ -66,64 +66,71 @@ btn.onclick = function() {
     Point_list =
       `
       盤名称:${in_Boxname}
-      DO(cx):${out_DOCX}
-      DO(tx):${out_DOTX}
+      
+      DO(cx)  :${out_DOCX}
+      DO(tx)  :${out_DOTX}
       DO(連続):${in_DO_Make}
-      DIS:${out_DIS}
-      DIA:${out_DIA}
-      SI:${in_SI}
-      AI:${in_AI}
-      RI:${in_RI}
-      AO:${in_AO}
-      合計:${out_Total}
-      KV8000(CPU):${out_kv8000}
-      KV-B16X(入力):${out_kv_b16x}
-      KV-B16T(出力):${out_kv_b16t}
-      KV-TP40(アナログ入力):${out_kv_tp40}
+      DIS     :${out_DIS}
+      DIA     :${out_DIA}
+      SI      :${in_SI}
+      AI      :${in_AI}
+      RI      :${in_RI}
+      AO      :${in_AO}
+      合計    :${out_Total}
+
+      KV8000(CPU)           :${out_kv8000}
+      KV-B16X(入力)         :${out_kv_b16x}
+      KV-B16T(出力)         :${out_kv_b16t}
+      KV-TP40(アナログ入力) :${out_kv_tp40}
       KV-DA40V(アナログ出力):${out_kv_da40v}
       `;
   } else if(in_Unitpoints == 32) {
     Point_list =
       `
       盤名称:${in_Boxname}
-      DO(cx):${out_DOCX}
-      DO(tx):${out_DOTX}
+      
+      DO(cx)  :${out_DOCX}
+      DO(tx)  :${out_DOTX}
       DO(連続):${in_DO_Make}
-      DIS:${out_DIS}
-      DIA:${out_DIA}
-      SI:${in_SI}
-      AI:${in_AI}
-      RI:${in_RI}
-      AO:${in_AO}
-      合計:${out_Total}
-      KV8000(CPU):${out_kv8000}
-      KV-C32X(入力):${out_kv_c32x}
-      KV-C32T(出力):${out_kv_c32t}
-      KV-TP40(アナログ入力):${out_kv_tp40}
+      DIS     :${out_DIS}
+      DIA     :${out_DIA}
+      SI      :${in_SI}
+      AI      :${in_AI}
+      RI      :${in_RI}
+      AO      :${in_AO}
+      合計    :${out_Total}
+
+      KV8000(CPU)           :${out_kv8000}
+      KV-C32X(入力)         :${out_kv_c32x}
+      KV-C32T(出力)         :${out_kv_c32t}
+      KV-TP40(アナログ入力) :${out_kv_tp40}
       KV-DA40V(アナログ出力):${out_kv_da40v}
       `;
   }else if(in_Unitpoints == 64) {
     Point_list =
       `
       盤名称:${in_Boxname}
-      DO(cx):${out_DOCX}
-      DO(tx):${out_DOTX}
+      
+      DO(cx)  :${out_DOCX}
+      DO(tx)  :${out_DOTX}
       DO(連続):${in_DO_Make}
-      DIS:${out_DIS}
-      DIA:${out_DIA}
-      SI:${in_SI}
-      AI:${in_AI}
-      RI:${in_RI}
-      AO:${in_AO}
-      合計:${out_Total}
-      KV8000(CPU):${out_kv8000}
-      KV-C64X(入力):${out_kv_c64x}
-      KV-C64T(出力):${out_kv_c64t}
-      KV-TP40(アナログ入力):${out_kv_tp40}
+      DIS     :${out_DIS}
+      DIA     :${out_DIA}
+      SI      :${in_SI}
+      AI      :${in_AI}
+      RI      :${in_RI}
+      AO      :${in_AO}
+      
+      合計    :${out_Total}
+      KV8000(CPU)           :${out_kv8000}
+      KV-C64X(入力)         :${out_kv_c64x}
+      KV-C64T(出力)         :${out_kv_c64t}
+      KV-TP40(アナログ入力) :${out_kv_tp40}
       KV-DA40V(アナログ出力):${out_kv_da40v}
       `;
   }
-
+  (document.getElementById("Point_list") as HTMLElement).innerText = Point_list.toString();
+}
 
 
 

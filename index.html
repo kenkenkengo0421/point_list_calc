@@ -10,39 +10,49 @@
 
   <div class="container">
     <div class="head"><p>ポイント変換ツール</p></div>  
-    <div class="foot"></div>
+    
+    <div class="foot">
+      <pre>
+        <code>
+※　前提条件
+DOII = 発停(cx,tx), 状態, 故障
+DOIS = 発停, 状態
+DII = 状態, 故障
+        </code>
+      </pre>
+    </div>
    
     <div class="main">
 
       <div class="req">
         CPUの数<br>
-        <input type="number" name="" value="0"><br>
+        <input type="number" id="in_Cpu" value="0"><br>
         inoutユニット点数選択 <br>("16"  "32"  "64")<br>
-       <input type="number" name="" value="0"> <br>
+       <input type="number" id="in_Unitpoints" value="0"> <br>
         盤名称<br>
-       <input type="text" name="" value="0"> <br>
+       <input type="text" id="in_Boxname" value="0"> <br>
         DOII点数<br>
-       <input type="number" name="" value="0"> <br>
+       <input type="number" id="in_DOII" value="0"> <br>
         DOIS点数<br>
-       <input type="number" name="" value="0"> <br>
+       <input type="number" id="in_DOIS" value="0"> <br>
         DII点数<br>
-       <input type="number" name="" value="0"> <br>
+       <input type="number" id="in_DII" value="0"> <br>
         DIS点数<br>
-       <input type="number" name="" value="0"> <br>
+       <input type="number" id="in_DIS" value="0"> <br>
         DIA点数<br>
-       <input type="number" name="" value="0"> <br>
+       <input type="number" id="in_DIA" value="0"> <br>
         DO点数(瞬時)<br>
-       <input type="number" name="" value="0"> <br>
+       <input type="number" id="in_DO" value="0"> <br>
         DO点数(連続)<br>
-       <input type="number" name="" value="0"> <br>
+       <input type="number" id="in_DO_Make" value="0"> <br>
         SI点数<br>
-       <input type="number" name="" value="0"> <br>
+       <input type="number" id="in_SI" value="0"> <br>
         AI点数<br>
-       <input type="number" name="" value="0"> <br>
+       <input type="number" id="in_AI" value="0"> <br>
         RI点数<br>
-       <input type="number" name="" value="0"> <br>
+       <input type="number" id="in_RI" value="0"> <br>
         AO点数<br>
-       <input type="number" name="" value="0"> <br>
+       <input type="number" id="in_AO" value="0"> <br>
       </div>
        
       <div class="res">
@@ -50,7 +60,6 @@
           <span id="Point_list"></span>
         </p>
       </div>
-      <script arc="main.js"></script> 
 
       <div class="non">
         <p id="btn_size">
@@ -58,6 +67,8 @@
         </p>
       </div>
     </div>
+    
+      <script src="main.js"></script> 
 
     <div class="sub1"></div>
     <div class="sub2"></div>
