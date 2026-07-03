@@ -145,7 +145,6 @@ btn.onclick = function () {
     csvContent += `AO,${in_AO}\n`;
     csvContent += `合計,${out_Total}\n`;
     csvContent += `KV8000(CPU),${out_kv8000}\n`;
-    // in_Unitpoints の値に応じたモジュール出力の分岐
     if (in_Unitpoints == 16) {
         csvContent += `KV-B16X(入力),${out_kv_b16x}\n`;
         csvContent += `KV-B16T(出力),${out_kv_b16t}\n`;
@@ -158,17 +157,12 @@ btn.onclick = function () {
         csvContent += `KV-C64X(入力),${out_kv_c64x}\n`;
         csvContent += `KV-C64T(出力),${out_kv_c64t}\n`;
     }
-    // 共通のアナログモジュール出力
     csvContent += `KV-TP40(アナログ入力),${out_kv_tp40}\n`;
     csvContent += `KV-DA40V(アナログ出力),${out_kv_da40v}\n`;
-    // 2. CSVファイルのダウンロード処理
     const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);
-    // ファイル名を入力された盤名称に設定（未入力の場合はデフォルト名）
     link.download = in_Boxname ? `${in_Boxname}.csv` : "point_list.csv";
-    // ダウンロードを発火
     link.click();
-    // オブジェクトURLの解放
     URL.revokeObjectURL(link.href);
 };
